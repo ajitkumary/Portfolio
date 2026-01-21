@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajit Kumar Yadav | Data Analyst</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <h1 id="hero-title" class="text-4xl md:text-6xl font-bold">Ajit Kumar Yadav</h1>
+    <p id="hero-role" class="mt-4 text-xl text-blue-400">Data Analyst • Full-Stack Mindset</p>
+    <p id="hero-desc" class="mt-6 max-w-xl text-gray-300">
+      I transform raw data into insights and build interactive dashboards using analytics and modern web technologies.
+    </p>
+
+    <div id="hero-buttons" class="mt-8 flex gap-4">
+      <a href="#projects" class="px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700">View Work</a>
+      <a href="resume.pdf" class="px-6 py-3 rounded-2xl border border-gray-500 hover:bg-gray-800">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="px-6 py-20 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-12">Core Skills</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="skill-card">
+        <i data-lucide="bar-chart-3" class="text-blue-400"></i>
+        <h3>Data Analytics</h3>
+        <p>Excel, SQL, Power BI, Python, GA4</p>
+      </div>
+      <div class="skill-card">
+        <i data-lucide="database" class="text-blue-400"></i>
+        <h3>Data Handling</h3>
+        <p>ETL, Data Cleaning, MySQL, PostgreSQL</p>
+      </div>
+      <div class="skill-card">
+        <i data-lucide="code-2" class="text-blue-400"></i>
+        <h3>Full-Stack</h3>
+        <p>HTML, CSS, JavaScript, APIs, Dashboards</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="px-6 py-20 bg-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="project-card">Healthcare Analytics<br><span>KPIs, SQL, Power BI dashboards</span></div>
+      <div class="project-card">Stock Price Prediction<br><span>Python ML & time series</span></div>
+      <div class="project-card">User Funnel Analysis<br><span>GA4 + SQL insights</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="px-6 py-20 text-center">
+    <h2 class="text-3xl font-bold mb-6">Let’s Work Together</h2>
+    <div class="flex justify-center gap-6">
+      <a href="https://github.com" target="_blank"><i data-lucide="github"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="mailto:yourmail@gmail.com"><i data-lucide="mail"></i></a>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2026 Ajit Kumar Yadav — Data Analytics Portfolio
+  </footer>
+
+  <!-- STYLES -->
+  <style>
+    .skill-card, .project-card {
+      background: #1f2937;
+      padding: 24px;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .skill-card h3, .project-card {
+      margin-top: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .skill-card p, .project-card span {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+  </style>
+
+  <!-- JS ANIMATIONS -->
+  <script>
+    lucide.createIcons();
+
+    gsap.from("#hero-title", { opacity: 0, y: 40, duration: 1 });
+    gsap.from("#hero-role", { opacity: 0, delay: 0.4 });
+    gsap.from("#hero-desc", { opacity: 0, delay: 0.7 });
+    gsap.from("#hero-buttons", { opacity: 0, scale: 0.8, delay: 1 });
+  </script>
+
+</body>
+</html>
