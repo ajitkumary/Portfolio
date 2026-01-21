@@ -3,112 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajit Kumar Yadav | Data Analyst</title>
+  <title>Ajit Kumar Yadav | Data Analyst & Developer</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- GSAP for animations -->
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .glass { backdrop-filter: blur(14px); background: rgba(255,255,255,0.06); }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-x-hidden">
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="font-bold text-lg">Ajit.dev</h1>
+      <div class="space-x-6 text-sm">
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#skills" class="hover:text-blue-400">Skills</a>
+        <a href="#projects" class="hover:text-blue-400">Projects</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-    <h1 id="hero-title" class="text-4xl md:text-6xl font-bold">Ajit Kumar Yadav</h1>
-    <p id="hero-role" class="mt-4 text-xl text-blue-400">Data Analyst • Full-Stack Mindset</p>
-    <p id="hero-desc" class="mt-6 max-w-xl text-gray-300">
-      I transform raw data into insights and build interactive dashboards using analytics and modern web technologies.
-    </p>
+    <h1 id="hero" class="text-5xl md:text-7xl font-extrabold">Data → Insights → Products</h1>
+    <p class="mt-6 text-xl text-gray-300 max-w-2xl">Data Analyst with a Full‑Stack mindset. I design analytics, dashboards, and data‑driven digital experiences.</p>
+    <div class="mt-10 flex gap-6">
+      <a href="#projects" class="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700">View Projects</a>
+      <a href="Resume .pdf" class="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10">Download Resume</a>
+    </div>
+  </section>
 
-    <div id="hero-buttons" class="mt-8 flex gap-4">
-      <a href="#projects" class="px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700">View Work</a>
-      <a href="Resume .pdf" class="px-6 py-3 rounded-2xl border border-gray-500 hover:bg-gray-800">Download Resume</a>
+  <!-- ABOUT -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
+    <div>
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="text-gray-300 leading-relaxed">
+        I specialize in analyzing complex datasets, designing insightful dashboards, and building interactive data products.
+        My unique strength is combining analytics with frontend development so business users can easily understand insights.
+      </p>
+    </div>
+    <div class="glass rounded-3xl p-8">
+      <h3 class="font-semibold mb-4">What I Bring</h3>
+      <ul class="space-y-3 text-gray-300">
+        <li>✔ Business‑focused data analysis</li>
+        <li>✔ SQL, Excel, Power BI, Python</li>
+        <li>✔ React & modern UI dashboards</li>
+        <li>✔ Clear storytelling with data</li>
+      </ul>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section class="px-6 py-20 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-12">Core Skills</h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="skill-card">
-        <i data-lucide="bar-chart-3" class="text-blue-400"></i>
-        <h3>Data Analytics</h3>
-        <p>Excel, SQL, Power BI, Python, GA4</p>
-      </div>
-      <div class="skill-card">
-        <i data-lucide="database" class="text-blue-400"></i>
-        <h3>Data Handling</h3>
-        <p>ETL, Data Cleaning, MySQL, PostgreSQL</p>
-      </div>
-      <div class="skill-card">
-        <i data-lucide="code-2" class="text-blue-400"></i>
-        <h3>Full-Stack</h3>
-        <p>HTML, CSS, JavaScript, APIs, Dashboards</p>
+  <section id="skills" class="bg-gray-900 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-16 text-center">Skills & Tools</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <Skill title="Analytics" list="Excel, SQL, Power BI, GA4" />
+        <Skill title="Data" list="ETL, Cleaning, Modeling" />
+        <Skill title="Programming" list="Python, JavaScript" />
+        <Skill title="Frontend" list="HTML, CSS, React" />
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="px-6 py-20 bg-gray-900">
-    <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-      <div class="project-card">Healthcare Analytics<br><span>KPIs, SQL, Power BI dashboards</span></div>
-      <div class="project-card">Stock Price Prediction<br><span>Python ML & time series</span></div>
-      <div class="project-card">User Funnel Analysis<br><span>GA4 + SQL insights</span></div>
+  <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <Project title="Healthcare Analytics" desc="Operational KPIs, patient trends, Power BI dashboards" />
+      <Project title="Stock Market Analysis" desc="Python ML models & predictive insights" />
+      <Project title="User Funnel Optimization" desc="GA4 + SQL conversion analysis" />
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="px-6 py-20 text-center">
-    <h2 class="text-3xl font-bold mb-6">Let’s Work Together</h2>
-    <div class="flex justify-center gap-6">
+  <section id="contact" class="bg-gray-900 py-24 text-center">
+    <h2 class="text-4xl font-bold mb-6">Let’s Build Something Valuable</h2>
+    <p class="text-gray-400 mb-10">Open to Data Analyst & Analytics Engineer roles</p>
+    <div class="flex justify-center gap-8">
       <a href="https://github.com" target="_blank"><i data-lucide="github"></i></a>
       <a href="https://linkedin.com" target="_blank"><i data-lucide="linkedin"></i></a>
       <a href="mailto:yourmail@gmail.com"><i data-lucide="mail"></i></a>
     </div>
   </section>
 
-  <footer class="py-6 text-center text-gray-500 text-sm">
-    © 2026 Ajit Kumar Yadav — Data Analytics Portfolio
-  </footer>
+  <footer class="py-6 text-center text-gray-500 text-sm">© 2026 Ajit Kumar Yadav</footer>
 
-  <!-- STYLES -->
-  <style>
-    .skill-card, .project-card {
-      background: #1f2937;
-      padding: 24px;
-      border-radius: 16px;
-      transition: transform 0.3s ease;
-    }
-    .skill-card:hover, .project-card:hover {
-      transform: translateY(-8px) scale(1.03);
-    }
-    .skill-card h3, .project-card {
-      margin-top: 12px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    .skill-card p, .project-card span {
-      font-size: 0.9rem;
-      color: #9ca3af;
-    }
-  </style>
-
-  <!-- JS ANIMATIONS -->
   <script>
     lucide.createIcons();
+    gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from("#hero-title", { opacity: 0, y: 40, duration: 1 });
-    gsap.from("#hero-role", { opacity: 0, delay: 0.4 });
-    gsap.from("#hero-desc", { opacity: 0, delay: 0.7 });
-    gsap.from("#hero-buttons", { opacity: 0, scale: 0.8, delay: 1 });
+    gsap.from("#hero", { opacity: 0, y: 50, duration: 1 });
+
+    gsap.utils.toArray("section").forEach(sec => {
+      gsap.from(sec, {
+        scrollTrigger: { trigger: sec, start: "top 80%" },
+        opacity: 0,
+        y: 60,
+        duration: 1
+      });
+    });
   </script>
-
 </body>
 </html>
+
+<script type="text/javascript">
+function Skill({title,list}){}
+function Project({title,desc}){}
+</script>
